@@ -3,13 +3,13 @@ FROM centos:7
 ################################################################
 # DEFINE sapcc and jvm version
 ################################################################
-ARG SAPCC_VERSION=2.12.5
+ARG SAPCC_VERSION=2.13.0
 ARG SAPJVM_VERSION=8.1.067
 
 ################################################################
 # General information
 ################################################################
-LABEL com.nabisoft.sapcc.version="2.12.5"
+LABEL com.nabisoft.sapcc.version="2.13.0"
 LABEL com.nabisoft.sapcc.sapjvm.version="8.1.067"
 
 
@@ -41,7 +41,7 @@ RUN wget --no-check-certificate --no-cookies --header "Cookie: eula_3_1_agreed=t
     wget --no-check-certificate --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
     unzip sapcc-$SAPCC_VERSION-linux-x64.zip && \
     rpm -i sapjvm-$SAPJVM_VERSION-linux-x64.rpm && \
-	rpm -i com.sap.scc-ui-$SAPCC_VERSION-4.x86_64.rpm
+	rpm -i com.sap.scc-ui-$SAPCC_VERSION-8.x86_64.rpm
 
 # You could also use Oracle JDK (feel free to skip JCE download + installation)
 #RUN wget --no-check-certificate --no-cookies --header "Cookie: gpw_e24=http%3a%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html; oraclelicense=accept-securebackup-cookie;" -S "https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.rpm" && \
